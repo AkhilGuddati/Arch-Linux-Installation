@@ -1,0 +1,51 @@
+## ░█▀▀░▀█▀░█▀█░█▀▄░█▀▀░█░█░▀█▀░█▀█
+## ░▀▀█░░█░░█▀█░█▀▄░▀▀█░█▀█░░█░░█▀▀
+## ░▀▀▀░░▀░░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░░
+
+# Sets user-defined palette
+palette = 'colors'
+
+# Setups
+format="$directory$git_branch$character"
+add_newline = false 
+
+# Other languages configurations:
+c.disabled = true
+cmake.disabled = true
+haskell.disabled = true
+python.disabled = true
+ruby.disabled = true
+rust.disabled = true
+perl.disabled = true
+package.disabled = true
+lua.disabled = true
+nodejs.disabled = true
+java.disabled = true
+golang.disabled = true
+
+[conda]
+format = ' [$symbol$environment](dimmed green) '
+
+# Prompt symbols 
+[character]
+success_symbol = "[](arrow bold)"
+error_symbol = "[](error)"
+vicmd_symbol = "[](#f9e2af)"
+
+[directory]
+format = "[ ]($style)[  ](bg:none fg:folder)[$path](bg:none fg:text bold)[ ]($style)"
+style = "bg:none fg:none"
+truncation_length = 3
+truncate_to_repo=false
+
+[git_branch]
+format = "[ ]($style)[[ ](bg:none fg:text bold)$branch](bg:none fg:text bold)[ ]($style)"
+style = "bg:none fg:none"
+
+[palettes.colors]
+background = '#111f1f'
+folder = '#DB6A89'
+text = '#919b9b'
+surface = '#111f1f'
+arrow = '#919b9b'
+error = '#5e7272'

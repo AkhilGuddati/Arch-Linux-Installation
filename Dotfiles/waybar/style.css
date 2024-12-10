@@ -1,0 +1,163 @@
+@import "colors.css";
+
+* {
+  font-size: 16px;
+  font-family: "CaskaydiaCove Nerd Font propo";
+  font-weight: bold;
+  border: none;
+  border-radius: 0px;
+  padding: 0px;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+window#waybar {
+  border-radius: 3px;
+  background: alpha(@background, 0.8);
+  color: @color9;
+}
+
+#mpris,
+#tray,
+#custom-theme,
+#battery,
+#clock,
+#custom-dunst,
+#pulseaudio,
+#battery,
+#workspaces{
+  margin: 2px 10px 2px 10px;
+  background: none;
+  color: @color9;
+}
+
+#workspaces {
+    background:transparent;
+    margin: 2px 0px 2px 5px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 3px;
+    border: none; 
+}
+#workspaces button {
+    padding: 0px 5px 0px 5px;
+    color: @color6;
+    opacity: 0.75;
+    background: transparent;
+}
+#workspaces button.empty {
+    padding: 0px 5px 0px 5px;
+    color: @color8;
+    opacity: 0.5;
+    background: transparent;
+}
+#workspaces button.active {
+    color: @color9;
+    opacity: 1.0;
+    padding: 0px 5px 0px 5px;
+    background: transparent;
+}
+#workspaces button:hover {
+    color: @color9;
+    opacity: 1.0;
+    background: transparent;
+}
+#workspaces button.urgent {
+    color: @color9;
+    opacity: 0.75;
+    padding: 0px 5px 0px 5px;
+    background: transparent;
+}
+
+#mpris {
+    background: transparent;
+    color: alpha(@color9, 1.0);
+    padding: 0px 10px 0px 0px;
+    border-radius: 3px;
+}
+
+#custom-theme {
+    font-size: 18px;
+    color: @color9;
+    margin: 2px 5px 2px 5px;
+    padding: 0px 5px 0px 5px;
+}
+
+#tray {
+    color: @color9;
+    background: transparent;
+    margin: 2px 2px 2px 5px;
+    padding: 0px 10px 0px 10px;
+    border-radius: 3px;
+}
+
+#audio {
+    background: transparent;
+    margin: 2px 2px 2px 2px;
+    padding: 0px 2px 0px 2px;
+    border-radius: 3px;
+}
+#pulseaudio.icon {
+    color: @color9;
+    margin: 0px 5px 0px 5px;
+    padding: 0px 5px 0px 5px;
+}
+#pulseaudio.vol {
+    color: alpha(@color6, 0.75);
+    margin: 0px 5px 0px -10px;
+    padding: 0px 10px 0px 0px;
+}
+#pulseaudio.microphone {
+    color: alpha(@color6, 0.75);
+    margin: 0px 5px 0px 0px;
+    padding: 0px 5px 0px 5px;
+}
+
+#bluetooth {
+    background: transparent;
+    margin: 2px 0px 2px 2px;
+    padding: 0px 2px 0px 2px;
+    border-radius: 3px 0px 0px 3px;
+}
+#bluetooth.icon {
+    color: @color9;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 5px 0px 5px;
+}
+#bluetooth.device {
+    color: alpha(@color6, 0.75);
+    margin: 0px 5px 0px -5px;
+    padding: 0px 5px 0px 0px;
+}
+#network{
+    margin: 2px 2px 2px 0px;
+    background: transparent;
+    padding: 0px 5px 0px 2px;
+    border-radius: 0px 3px 3px 0px;
+}
+#network.icon {
+    color: @color9;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 5px 0px 5px;
+}
+#network.name {
+    color: alpha(@color6, 0.75);
+    margin: 0px 5px 0px -5px;
+    padding: 0px 5px 0px 0px;
+}
+
+#battery {
+    color: alpha(@color9, 0.9);
+    background: transparent;
+    margin: 2px 2px 2px 2px;
+    padding: 0px 10px 0px 10px;
+    border-radius: 3px;
+}
+
+#custom-dunst {
+    color: @color9;
+}
+
+#clock{
+    color: @color9;
+    margin-right: 20px;
+}

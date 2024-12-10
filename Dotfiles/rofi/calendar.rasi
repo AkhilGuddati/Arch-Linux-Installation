@@ -1,0 +1,136 @@
+/*****----- Global Properties -----*****/
+@import                          "colors.rasi"
+@import                          "fonts.rasi"
+
+/*****----- Main Window -----*****/
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    east;
+    anchor:                      east;
+    fullscreen:                  false;
+    width:                       384px;
+    x-offset:                    -10px;
+    y-offset:                    -328px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               3px;
+    background-color:            @background-colour;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    border-color:                @border-colour;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview"];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true; 
+    border:                      0px solid;
+    border-radius:               3px;
+    position:			 center;
+    background-color:            @alternate-background;
+    text-color:                  @alternate-active-foreground;
+    children:                    ["prompt"];
+}
+
+prompt {
+    enabled:                     true;
+    padding: 			 4px 4px 6px 6px;
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         ":";
+    background-color:            inherit;
+    text-color:                  @foreground-colour;
+}
+entry {
+    enabled:                     true;
+    background-color:            inherit;
+    text-color:                  @foreground-colour;
+    cursor:                      text;
+    placeholder:                 "";
+    placeholder-color:           inherit;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     9;
+    lines:			 7;
+    spacing:                     5px;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                false;
+    fixed-columns:               false; 
+    border:                      0px solid;
+    border-radius:               0px;
+    background-color:            transparent;
+    text-color:                  @foreground-colour;
+}
+
+/*****----- Elements -----*****/
+element {
+    orientation:                 horizontal;
+    border:			 0px;
+    border-radius:               0px;
+    border-color:		 @selected;
+    padding:                     5px 5px 5px 5px;
+    border:                      0px solid;
+    border-radius:               3px;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            @normal-background;
+    text-color:                  inherit;
+}
+element normal.urgent {
+    background-color:            @normal-background;
+    text-color:                  inherit;
+}
+element normal.active {
+    background-color:            transparent;
+    text-color:                  @alternate-active-foreground;
+}
+element selected.normal {
+    background-color:            @foreground-colour;
+    text-color:                  @normal-background;
+}
+element selected.urgent {
+    background-color:            @foreground-colour;
+    text-color:                  @normal-background;
+}
+element selected.active {
+    background-color:            @foreground-colour;
+    text-color:                  @normal-background;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.0;
+    horizontal-align:            0.0;
+    margin:                      2px 0px 2px 2px;
+    expand:                      true;
+}

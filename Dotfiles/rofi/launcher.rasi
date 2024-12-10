@@ -1,0 +1,156 @@
+/*****----- Configuration -----*****/
+configuration {
+    modi:                   	"drun";
+    show-icons:                 false;
+    drun-display-format:        "{name}";
+}
+
+/*****----- Global Properties -----*****/
+@import				"colors.rasi"
+@import				"fonts.rasi"
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       500px;
+    height:                      0px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    enabled:                     true;
+    border:			 0px solid;
+    border-radius:               3px;
+    background-color:            @background-color;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "inputbar", "listbox"];
+}
+
+listbox {
+    spacing:                     15px;
+    padding:                     15px;
+    background-color:            @background-colour;
+    orientation:                 vertical;
+    children:                    [ "message", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     40px 40px 155px;
+    background-color:            @background-colour;
+    background-image:            url("~/.config/current_wall.png", width);
+    text-color:                  @alternate-active-foreground;
+    orientation:                 horizontal;
+    children:                    [ "textbox-prompt-colon", "entry" ];
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    font:                        "CaskaydiaCove Nerd font Propo 16";
+    str:                         " ";
+    padding:                     8px 0px 0px 12px;
+    border:                      0px solid;
+    border-radius:               3px;
+    background-color:            @alternate-active-foreground;
+    text-color:                  @background-colour;
+}
+entry {
+    enabled:                     true;
+    expand:                      true;
+    padding:                     12px 16px;
+    border:                      0px solid;
+    border-radius:               3px;
+    background-color:            @background-colour;
+    text-color:                  @foreground-colour;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
+}
+dummy {
+    expand:                      true;
+    background-color:            transparent;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       10;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true; 
+    spacing:                     10px;
+    background-color:            transparent;
+    text-color:                  @foreground-colour;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     8px;
+    border:                      0px solid;
+    border-radius:               3px;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            @normal-background;
+    text-color:                  inherit;
+}
+element normal.urgent {
+    background-color:            @normal-background;
+    text-color:                  inherit;
+}
+element normal.active {
+    background-color:            transparent;
+    text-color:                  @alternate-active-foreground;
+}
+element alternate.normal {
+    background-color:            @normal-background;
+    text-color:                  inherit;
+}
+element alternate.urgent {
+    background-color:            @normal-background;
+    text-color:                  inherit;
+}
+element alternate.active {
+    background-color:            transparent;
+    text-color:                  @alternate-active-foreground;
+}
+element selected.normal {
+    background-color:            @foreground-colour;
+    text-color:                  @normal-background;
+}
+element selected.urgent {
+    background-color:            @foreground-colour;
+    text-color:                  @normal-background;
+}
+element selected.active {
+    background-color:            @foreground-colour;
+    text-color:                  @normal-background;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}

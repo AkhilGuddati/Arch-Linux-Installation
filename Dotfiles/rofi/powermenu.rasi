@@ -1,0 +1,93 @@
+@import                          "colors.rasi"
+@import                          "fonts.rasi"
+
+window {
+    transparency:                   "real";
+    background-color:               transparent;
+    text-color:                     @foreground-colour;
+    border-radius:                  3px;
+    height:                         280px;
+    width:                          735px;
+    location:                       center;
+    x-offset:                       0;
+    y-offset:                       0;
+}
+
+prompt {
+  enabled: 						      true;
+  padding:                  10px 0px;
+	background-color: 				@background-colour;
+	text-color: 					    @alternate-active-foreground;
+}
+
+inputbar {
+	  children: 						          [ prompt ];
+    background-color:               @background-colour;
+    text-color:                     @foreground-colour;
+    expand:                         false;
+    border:                  		    0px;
+    border-radius:                  3px;
+    margin:                         10px;
+    padding:                        0px 10px;
+    position:                       center;
+}
+
+listview {
+    background-color:               @background-colour;
+    margin:                         10px;
+    spacing:                        20px;
+    cycle:                          false;
+    dynamic:                        true;
+    layout:                         horizontal;
+}
+
+mainbox {
+    background-color:               @background-colour;
+    children:                       [ inputbar, listview ];
+    spacing:                        0px;
+    padding:                        20px 20px;
+}
+
+element {
+    background-color:               @alternate-background;
+    text-color:                     @foreground-colour;
+    orientation:                    horizontal;
+    border-radius:                  3px;
+    padding:                        50px 60px;
+}
+
+element-text {
+    background-color:               transparent;
+    text-color:       				      inherit;
+  	font:							              "CaskaydiaCove Nerd font Propo 32";
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color:               inherit;
+    text-color:                     inherit;
+}
+
+element normal.active,
+element alternate.active {
+    background-color:               inherit;
+    text-color:                     inherit;
+}
+
+element selected {
+    background-color:               @foreground-colour;
+    text-color:                     @alternate-background;
+}
+
+element selected.urgent {
+    background-color:               @foreground-colour;
+    text-color:                     @alternate-background;
+}
+
+element selected.active {
+    background-color:               @foreground-colour;
+    text-color:                     @alternate-background;
+}

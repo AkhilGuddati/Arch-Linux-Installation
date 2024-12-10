@@ -1,0 +1,80 @@
+/*****----- Global Properties -----*****/
+@import                          "colors.rasi"
+@import                          "fonts.rasi"
+
+/*****----- Main Window -----*****/
+window {
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       400px;
+    border-radius:               3px;
+    cursor:                      "default";
+    background-color:            transparent;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    spacing:                     10px;
+    padding:                     20px 10px;
+    background-color:            @background-colour;
+    children:                    [ "message", "listview" ];
+}
+
+/*****----- Message -----*****/
+message {
+    margin:                      10px 20px;
+    padding:                     10px;
+    border-radius:               3px;
+    background-color:            @background-colour;
+    text-color:                  @foreground-colour;
+}
+textbox {
+    background-color:            transparent;
+    font:                        "CaskaydiaCove Nerd font Propo 13";
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    placeholder-color:           @foreground-colour;
+}
+
+/*****----- Listview -----*****/
+listview {
+    columns:                     1;
+    lines:                       2;
+    cycle:                       false;
+    dynamic:                     false;
+    scrollbar:                   false;
+    layout:                      horizontal;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     25px;
+    padding:                     0px 20px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    padding:                     0px;
+    border-radius:               3px;
+    background-color:            @background-colour;
+    text-color:                  @foreground-colour;
+    cursor:                      pointer;
+}
+element-text {
+    background-color:            inherit;
+    padding:                     10px 60px;
+    text-color:                  inherit;
+    font:                        "CaskaydiaCove Nerd font Propo 18";
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+element selected.normal {
+    background-color:            @foreground-colour;
+    text-color:                  @background-colour;
+}
