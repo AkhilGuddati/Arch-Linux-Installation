@@ -1,0 +1,214 @@
+{
+  "output": [ "eDP-1" ],	
+  "layer": "top",
+  "position": "left",
+  "margin": "10px 0px 10px 10px",
+  "reload_style_on_change": true,
+  "width": 52,
+  "modules-left": [
+    "hyprland/workspaces",
+    "mpris"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "all-outputs": true, 
+    "format-icons": {
+       //"default": "",
+       //"active": "<big></big>"
+       "1": "一",
+       "2": "二",
+       "3": "三",
+       "4": "四",
+       "5": "五",
+       "6": "六",
+       "7": "七",
+       "8": "八",
+       "9": "九",
+       "10": "十"
+     },
+     "persistent-workspaces": {
+             "*": 5
+     }
+  },
+  "mpris": {
+     "format": "<big>{player_icon}</big>{dynamic}",
+     "format-paused": "<big>{status_icon}</big> {dynamic}", 
+     "dynamic-order": ["artist","title"],
+     "dynamic-importance-order": ["artist","title"],
+     "dynamic-len": 32,
+     "rotate": 90,
+     "tooltip": false,
+     "player-icons": {
+       "default": "▶ ",
+       "mpv": " ",
+       "firefox": "󰈹 "
+     },
+     "status-icons": {
+       "paused": "" 
+     }
+     // "ignored-players": ["firefox"]
+  },
+
+
+  "modules-right": [
+    "custom/theme",
+    "custom/windows",
+    "group/audio",
+    "group/end",
+    "group/bluetooth",
+    "group/network",
+    "group/end",
+    "battery",
+    "clock#date",
+    "clock"
+  ],
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10,
+    "tooltip": false
+  },
+  "custom/theme": {
+    "format": "󰌁",
+    "on-click": "$HOME/.config/hypr/scripts/theme.sh &",
+    "tooltip": false
+  },
+  "custom/windows": {
+    "format": "",
+    "on-click": "notify-send '󰖳 Starting Cortana' && sudo virsh start Cortana && sleep 10 && looking-glass-client",
+    "on-click-right": "notify-send 'Shutting Down...' && sudo virsh shutdown Cortana",
+    "tooltip": false
+  },
+  "group/audio": {
+     "orientation": "vertical",
+     "drawer": {
+         "transition-duration": 600,
+         "children-class": "not-power",
+         "transition-to-left": true,
+         "click-to-reveal": true
+     },
+     "modules": ["pulseaudio#icon", "pulseaudio#vol","pulseaudio#mic","pulseaudio#micvol"]
+   },
+   "pulseaudio#icon": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-muted": "",
+    "format-icons": {
+        "default": ["", "", ""]
+    },
+    "on-scroll-up": "$HOME/.config/hypr/scripts/volume.sh --inc",
+    "on-scroll-down": "$HOME/.config/hypr/scripts/volume.sh --dec",
+    "tooltip": false
+  },  
+  "pulseaudio#vol": {
+    "format": "{volume}%",
+    "format-bluetooth": "{volume}%",
+    "on-click": "$HOME/.config/hypr/scripts/volume.sh --toggle",
+    "on-scroll-up": "$HOME/.config/hypr/scripts/volume.sh --inc",
+    "on-scroll-down": "$HOME/.config/hypr/scripts/volume.sh --dec",
+    "tooltip": false
+  },
+  "pulseaudio#mic": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "on-click": "$HOME/.config/hypr/scripts/volume.sh --toggle-mic",
+    "on-scroll-up": "$HOME/.config/hypr/scripts/volume.sh --mic-inc",
+    "on-scroll-down": "$HOME/.config/hypr/scripts/volume.sh --mic-dec",
+    "tooltip": false
+  },
+  "pulseaudio#micvol": {
+    "format": "{format_source}",
+    "format-source": "{volume}%",
+    "on-click": "$HOME/.config/hypr/scripts/volume.sh --toggle-mic",
+    "on-scroll-up": "$HOME/.config/hypr/scripts/volume.sh --mic-inc",
+    "on-scroll-down": "$HOME/.config/hypr/scripts/volume.sh --mic-dec",
+    "tooltip": false
+  },
+  "group/bluetooth": {
+     "orientation": "vertical",
+     "drawer": {
+         "transition-duration": 600,
+         "children-class": "not-power",
+	 "transition-to-left": true,
+         "click-to-reveal": true
+     },
+     "modules": ["bluetooth#icon", "bluetooth#device"]
+   },
+  "bluetooth#icon": {
+    "format": "<big>󰂯</big>",
+    "format-connected": "<big>󰂱</big>",
+    "format-off": "<big>󰂲</big>",
+    "format-disabled": "<big>󰂲</big>",
+    "tooltip": false
+  },
+  "bluetooth#device": {
+    "format": " Bluetooth",
+    "rotate": 90,
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "on-click": "$HOME/.config/hypr/scripts/bluetooth.sh",
+    "tooltip": false
+  },
+  "group/network": {
+     "orientation": "vertical",
+     "drawer": {
+         "transition-duration": 600,
+         "children-class": "not-power",
+	 "transition-to-left": true,
+         "click-to-reveal": true
+     },
+     "modules": ["network#icon", "network#name"]
+  },
+  "network#icon": {
+    "interface": "wlan0",
+    "format-wifi": "<big>{icon}</big>",
+    "format-icons": ["󰤫", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format-ethernet": "󰈀",
+    "format-linked": "󰈀",
+    "format-disconnected": "󰌙",
+    "tooltip": false
+  },
+  "network#name": {
+    "interface": "wlan0",
+    "rotate": 90,
+    "format": " {ifname}",
+    "format-wifi": " {essid}",
+    "format-ethernet": " {ipaddr}",
+    "format-disconnected": " Disconnected",
+    "on-click": "$HOME/.config/hypr/scripts/network.sh",
+    "tooltip": false
+  },
+  "battery": {
+    "bat": "BAT1",
+    "interval": 2,
+    "rotate": 270,
+    "format": "<big>{icon}</big>",    
+    "format-icons": ["󱃍", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-charging": "<b>{icon} </b>",
+    "format-plugged": "",
+    "on-click": "$HOME/.config/hypr/scripts/power-profiles.sh",
+    "max-length": 25,
+    "tooltip": false
+  },
+  "clock": {
+    "format": "{:%I\n%M}",
+    "on-click": "$HOME/.config/hypr/scripts/calendar.sh",
+    "tooltip": false
+  },
+  "clock#date": {
+    "format": "{:%b\n%d\n%a}",
+    "on-click": "$HOME/.config/hypr/scripts/calendar.sh",
+    "tooltip": false
+  },
+  "group/end":{
+      "orientation": "vertical",
+     "modules": ["custom/end"]
+  },
+  "custom/end":{
+    "format":" ",
+    "tooltip": false
+  }
+}

@@ -1,0 +1,214 @@
+@import "colors.css";
+
+* {
+  font-size: 16px;
+  font-family: "CaskaydiaCove Nerd Font propo";
+  font-weight: bold;
+  border: none;
+  border-radius: 0px;
+  padding: 0px;
+}
+
+window#waybar {
+    border-radius: 3px;
+    margin: 10px 10px;
+    background: alpha(@background, 0.8);
+    color: @color9;
+}
+
+#mpris,
+#tray,
+#custom-theme,
+#custom-windows,
+#battery,
+#custom-dunst,
+#pulseaudio,
+#battery,
+#workspaces{
+  background: alpha(@color7, 0.15);
+  color: @color9;
+}
+
+#workspaces {
+    background:alpha(@color7, 0.15);
+    margin: 5px 5px 0px 5px;
+    padding: 5px 0px;
+    border-radius: 3px;
+    border: none; 
+}
+#workspaces button {
+    padding: 2px 0px;
+    margin: 2px 5px;
+    color: @color9;
+    opacity: 0.8;
+    background: transparent;
+}
+#workspaces button.empty {
+    padding: 2px 0px;
+    margin: 2px 5px;
+    color: @color15;
+    opacity: 0.15;
+    background: transparent;
+}
+#workspaces button.active {
+    color: @color9;
+    opacity: 1.0;
+    border-radius: 3px;
+    padding: 2px 0px;
+    margin: 2px 5px;
+    background: alpha(@background, 0.5);
+}
+#workspaces button:hover {
+    color: @color9;
+    opacity: 1.0;
+    border-radius: 3px;
+    padding: 2px 0px;
+    margin: 2px 5px;
+    background: alpha(@background, 0.5);
+}
+#workspaces button.urgent {
+    color: @color9;
+    opacity: 0.75;
+    border-radius: 3px;
+    padding: 2px 0px;
+    margin: 2px 5px;
+    background: alpha(@background, 0.5);
+}
+
+#mpris {
+    background: transparent;
+    color: @color9;
+    margin: 20px 5px;
+}
+
+#mpris.paused {
+    background: transparent;
+    color: alpha(@color15, 0.15);
+    margin: 20px 5px;
+}
+
+#custom-theme {
+    font-size: 18px;
+    color: @color9;
+    margin: 0px 5px;
+    padding: 5px 0px;
+    border-radius: 3px 3px 0px 0px;
+}
+
+#custom-windows {
+    font-size: 18px;
+    color: @color9;
+    margin: 0px 5px;
+    padding: 5px 0px;
+}
+
+#tray {
+    color: @color9;
+    background: alpha(@color7, 0.15);
+    margin: 0px 5px;
+    padding: 5px 0px;
+}
+
+#audio {
+    background: alpha(@color7, 0.15);
+    margin: 0px 5px;
+    padding: 5px 0px 0px 0px;
+}
+#end {
+    background: alpha(@color7, 0.15);
+    margin: 0px 5px;
+    padding: 0px 0px 5px 0px;
+}
+#custom-end {
+  font-size: 3px;
+  background: alpha(@background,0.5);
+  margin: 0px 5px;
+  border-radius: 0px 0px 3px 3px;
+}
+#pulseaudio.icon {
+    color: @color9;
+    background: alpha(@background, 0.5);
+    padding: 5px 0px 2px 0px;
+    margin: 0px 5px;
+    border-radius: 3px 3px 0px 0px;
+}
+#pulseaudio.vol {
+    color: alpha(@color6, 0.75);
+    background: alpha(@background, 0.5);
+    padding: 2px 0px 5px 0px;
+    margin: 0px 5px;
+}
+#pulseaudio.mic {
+    color: alpha(@color6, 0.75);
+    background: alpha(@background, 0.5);
+    padding: 5px 0px;
+    margin: 0px 5px;
+}
+#pulseaudio.micvol {
+    color: alpha(@color6, 0.75);
+    background: alpha(@background, 0.5);
+    padding: 0px 0px 5px 0px;
+    margin: 0px 5px;
+}
+
+#bluetooth {
+    background: alpha(@color7, 0.15);
+    margin: 0px 5px;
+    padding: 0px;
+}
+#bluetooth.icon {
+    font-size: 18px;
+    color: @color9;
+    background: alpha(@background, 0.5);
+    margin: 0px 5px;
+    padding: 5px 0px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
+}
+#bluetooth.device {
+    color: alpha(@color6, 0.75);
+    background: alpha(@background, 0.5);
+    margin: 0px 5px;
+    padding: 5px 0px 0px 0px;
+}
+#network {
+    background: alpha(@color7, 0.15);
+    margin: 0px 5px;
+    padding: 0px;
+}
+#network.icon {
+    color: @color9;
+    background: alpha(@background, 0.5);
+    margin: 0px 5px;
+    padding: 0px;
+}
+#network.name {
+    color: alpha(@color6, 0.75);
+    background: alpha(@background, 0.5);
+    margin: 0px 5px;
+    padding: 3px 0px 0px 0px;
+}
+
+#battery {
+    color: alpha(@color9, 0.9);
+    font-size: 18px;
+    background: alpha(@color7, 0.15);
+    margin: 0px 5px;
+    padding: 5px 0px 10px 0px;
+}
+
+#clock{
+    color: @color9;
+    font-size: 20px;
+    background: alpha(@color7, 0.15);
+    margin: 0px 5px 5px 5px;
+    padding: 5px 0px;
+    border-radius: 0px 0px 3px 3px;
+}
+#clock.date {
+    color: @color9;
+    font-size: 14px;
+    background: alpha(@color7, 0.15);
+    margin: 5px 5px 0px 5px;
+    padding: 5px 0px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
+}
